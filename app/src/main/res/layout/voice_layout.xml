@@ -5,10 +5,12 @@
     android:orientation="vertical"
     android:gravity="center">
     <TextView
+        android:layout_margin="8dp"
         android:text="root/memomaster에 파일이 있습니다."
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <ListView
+        android:layout_margin="8dp"
         android:id="@+id/listview_rec"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

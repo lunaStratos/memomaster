@@ -65,6 +65,9 @@ public class SettingView extends AppCompatActivity implements View.OnClickListen
 
         switch (v.getId()) {
             case R.id.backupBtn:
+                /**
+                 * 백업
+                 */
 
                 boolean backupResult = fm.backup();
                 if(backupResult){
@@ -76,7 +79,9 @@ public class SettingView extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.restoreBtn:
-
+                /**
+                 * 복구
+                 */
                 boolean restoreResult = fm.restore();
                 if(restoreResult){
                     Toast.makeText(getApplicationContext(), "복구가 완료되었습니다.", Toast.LENGTH_LONG).show();
@@ -86,7 +91,10 @@ public class SettingView extends AppCompatActivity implements View.OnClickListen
 
                 break;
             case R.id.textSettingBtn:
-
+                /**
+                 * 원래는 텍스트 세팅이나 그냥 나가기로 변경
+                 */
+                finish();
 
                 break;
             case R.id.emailBackupBtn:

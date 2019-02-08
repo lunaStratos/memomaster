@@ -26,7 +26,7 @@
                     android:id="@+id/textSettingBtn"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:text="텍스트 세팅" />
+                    android:text="나가기" />
 
                 <Button
                     android:id="@+id/backupBtn"
@@ -98,7 +98,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/info_email"
-                    android:textColor="@color/settingTextColor"/>
+                    android:textColor="@color/settingTextColor"
+                    android:autoLink="web|email"/>
 
 
             </TableRow>
@@ -114,7 +115,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/info_home"
-                    android:textColor="@color/settingTextColor"/>
+                    android:textColor="@color/settingTextColor"
+                    android:autoLink="web"/>
 
             </TableRow>
 
@@ -129,8 +131,9 @@
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="버전 1.0"
-                    android:textColor="@color/settingTextColor"/>
+                    android:text="version 1.0"
+                    android:textColor="@color/settingTextColor"
+                    />
 
             </TableRow>
         </TableLayout>

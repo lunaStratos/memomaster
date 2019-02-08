@@ -1,5 +1,6 @@
 package memomaster.lunastratos.com.memomaster.view;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -86,8 +87,17 @@ public class ReadAndWriteView extends AppCompatActivity {
 
 
     public void saveMemo(String title, String memo) {
-        String sql = "update " + TABLE_NAME + " set title='" + title + "', memo='" + memo +"' WHERE number = " + memoNumber;
-        db.execSQL(sql);
+
+
+        ContentValues values = new ContentValues();
+        values.put("title", title);
+        values.put("memo", memo);
+
+        // Inserting Row
+        db.update(TABLE_NAME, values,  "number=" + memoNumber, null);
+
+//        String sql = "update " + TABLE_NAME + " set title='" + title + "', memo='" + memo +"' WHERE number = " + memoNumber;
+//        db.execSQL(sql);
     }
 
     public void deleteMemo(){

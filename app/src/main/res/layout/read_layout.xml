@@ -15,10 +15,11 @@
         android:gravity="center">
 
         <TextView
-            android:textSize="20dp"
-            android:layout_width="38dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="제목" />
+            android:padding="3dp"
+            android:text="제목"
+            android:textSize="20dp" />
 
         <EditText
             android:maxLength="15"
@@ -29,6 +30,14 @@
             android:text="" />
 
     </LinearLayout>
+
+    <TextView
+        android:textSize="13dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내용" />
 
     <EditText
         android:id="@+id/insert_memo"

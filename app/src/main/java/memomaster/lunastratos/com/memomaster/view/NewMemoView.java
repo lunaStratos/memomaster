@@ -1,5 +1,6 @@
 package memomaster.lunastratos.com.memomaster.view;
 
+import android.content.ContentValues;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -53,6 +54,7 @@ public class NewMemoView extends AppCompatActivity {
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
         String title = pref.getString("title", "");
         String memo = pref.getString("memo", "");
+        Toast.makeText(this, "title" + title +" / " + memo, Toast.LENGTH_LONG).show();
 
         if (!title.replaceAll(" ", "").equals("") && !memo.replaceAll(" ", "").equals("")) {
             newMemo(title, memo);
@@ -83,8 +85,16 @@ public class NewMemoView extends AppCompatActivity {
 
 
     public void newMemo(String title, String memo) {
-        String sql = "insert into " + TABLE_NAME + "(number, title, memo) VALUES" + "(NULL, '" + title + "', '" + memo + "' )" + ";";
-        db.execSQL(sql);
+//        String sql = "insert into " + TABLE_NAME + "(number, title, memo) VALUES" + "(NULL, '" + title + "', '" + memo + "' );";
+//        db.execSQL(sql);
+
+        ContentValues values = new ContentValues();
+        values.put("title", title);
+        values.put("memo", memo);
+
+        // Inserting Row
+        db.insert(TABLE_NAME, null, values);
+
         finish();
 
     }
@@ -92,6 +102,23 @@ public class NewMemoView extends AppCompatActivity {
 
     public void autoSave() {
         new_memo.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                tempSave();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+
+        });
+        new_title.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 

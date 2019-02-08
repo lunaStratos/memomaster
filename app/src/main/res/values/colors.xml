@@ -7,7 +7,7 @@
     <!--for splash-->
     <color name="splashBack">#21293d</color>
     <!--메모지 색상 영역-->
-    <color name="readAreaBackground">#ecffe5</color>
+    <color name="readAreaBackground">#E7E7E7</color>
     <color name="readTitleBackground">#ffffff</color>
     <color name="readEditBackground">#ffffff</color>
 
